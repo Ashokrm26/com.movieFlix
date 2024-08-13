@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Movies details</title>
+</head> 
+	<style>
+        body{
+            margin-top: 0.5%;
+            /* background-color: #ffffff; */
+            color:#ff0202;
+            text-align: center;
+        }
+        table {
+            background-color: #808080;
+            font-family: monospace;
+            color:#fff;
+            font-size: 17px;
+        }
+        thead {
+            background-color: #544c61;
+            color:#fff;
+        }
+        a{
+            text-decoration: none;
+            align-items: center;
+            background-color: rgb(53, 96, 235);
+            color: white;
+            padding: 1%;
+            border-radius: 10px;
+            margin-inline-end: 1%;
+        }
+        .back{
+            text-decoration: none;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            color: white;
+            padding: 1%;
+            border-radius: 10px;
+            display: flex;
+        }
+        a:hover{
+            text-decoration: none;
+            align-items: center;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            padding: 1%;
+            border-radius: 10px;
+            margin-inline-end: 1%;
+        }
+        div{
+            border: 0px solid black;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+<body>
+	<div class="back">
+        <a href="back">Admin Page</a>
+
+        <a href="view-user">View user</a>
+
+        <a href="add-movie">Add movie</a>
+
+    </div>
+
+	<h2>All Movies</h2>
+	<table border="3" align="center">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Movie Name</th>
+				<th>Movie URL</th>
+				<th>Movie Genre</th>
+				<th>Movie Cast</th>
+				<th>Movie Director</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="movie : ${movie}">
+				<td th:text="${movie.id}"></td>
+				<td th:text="${movie.movieName}"></td>
+				<td th:utext="${movie.movieLink}"></td>
+				<td th:text="${movie.movieGenre}"></td>
+				<td th:text="${movie.movieCast}"></td>
+				<td th:text="${movie.movieDirector}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Movies details</title>
+</head> 
+	<style>
+	body{
+		background-color: #3a606e;
+		color:#ff9f1c;
+	}
+	table {
+		background-color: #808080;
+		font-family: monospace;
+		color:#fff;
+		font-size: 17px;
+	}
+	thead {
+		background-color: #544c61;
+		color:#fff;
+	}
+	a{
+		text-decoration: none;
+		align-items: center;
+		background-color: black;
+		color: white;
+		border: 1px solid;
+		margin-top :5%;
+		padding: 2%;
+	}
+</style>
+<body>
+	<div class="back">
+        <a href="back">Admin Page !</a>
+    </div>
+	<h2>All Movies</h2>
+	<table border="3" align="center">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Link</th>
+				<th>Genre</th>
+				<th>Cast</th>
+				<th>Director</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="movie : ${movie}">
+				<td th:text="${movie.id}"></td>
+				<td th:text="${movie.movieName}"></td>
+				<td th:utext="${movie.movieLink}"></td>
+				<td th:text="${movie.movieGenre}"></td>
+				<td th:text="${movie.movieCast}"></td>
+				<td th:text="${movie.movieDirector}"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>
+ -->

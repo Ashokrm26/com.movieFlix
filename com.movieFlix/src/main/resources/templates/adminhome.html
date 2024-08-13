@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #141414;
+          color: #fff;
+      }
+      h2{
+          text-align: center;
+      }
+      header {
+          background-color: rgb(253, 0, 0);
+          padding: 20px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      header h1 {
+          margin: 0;
+      }
+
+      nav ul {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          display: flex;
+      }
+
+      nav ul li {
+          margin-left: 20px;
+      }
+
+      nav ul li a {
+          color: #fff;
+          text-decoration: none;
+          font-size: larger;
+      }
+      .movie-grid {
+		display: grid; 
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 10px;
+		height: 30%
+	}
+	.movie-item {
+	padding: 10px;
+	border:1px solid rgb(128, 128, 128);
+	border-radius: 4px;
+	text-align: center;
+}
+
+.movie-item iframe {
+	width: 100%;
+	height: 200px;
+}
+    </style>
+</head>
+<body>   
+  <header>
+    <h1>MovieFlix</h1>
+      <nav>
+        <ul>
+            <li><a href="back">Home</a></li>
+            <li><a href="view-user">View User</a></li>
+            <li><a href="add-movie">Add Movies</a></li>
+            <li><a href="logout">Log out</a></li>
+        </ul>
+      </nav>
+  </header>
+  <h2>All Movies</h2>
+	<table border="3" align="center">
+	<!-- 
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Movie Name</th>
+				<th>Movie URL</th>
+				<th>Movie Genre</th>
+				<th>Movie Cast</th>
+				<th>Movie Director</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="movie : ${movie}">
+				<td th:text="${movie.id}"></td>
+				<td th:text="${movie.movieName}"></td>
+				<td th:utext="${movie.movieLink}"></td>
+				<td th:text="${movie.movieGenre}"></td>
+				<td th:text="${movie.movieCast}"></td>
+				<td th:text="${movie.movieDirector}"></td>
+			</tr>
+		</tbody>
+	</table>
+	 -->
+	 
+	<div class="movie-grid">
+		<div th:each="movie : ${movie}" class="movie-item">
+			<h5 th:text="${movie.movieName}">Movie Name</h5>
+			<div th:utext="${movie.movieLink}"></div>
+			<h5>Cast : </h5>
+			<h5 th:utext="${movie.movieCast}"></h5>
+			<h5>Director : </h5>
+			<h5 th:utext="${movie.movieDirector}"></h5>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <style>
+      /* styles.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    font-family: Arial, sans-serif;
+    /* background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/93a14a55-8986-4f94-bc79-bc6e7b99f56f/45f71977-200e-456d-9e0a-72926ac7c915/IN-en-20230626-popsignuptwoweeks-perspective_alpha_website_medium.jpg');*/ 
+    background-color: #1A1423; 
+    margin: 0;
+    padding: 0;    
+  }
+  
+  .form-container {
+    border: 2px solid black;
+    max-width: 365px;
+    margin: 50px auto;
+    padding: 40px 40px 40px 40px;
+    background-color: #372549;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgb(0, 0, 0);
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #ffffff;
+  }
+  
+  h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f5f5f5;
+  }
+  
+  button {
+      width: 100%;
+      height: 40px;
+      background: #fff;
+      border: none;
+      outline: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1em;
+      color: #191919;
+      font-weight: 500;
+      transition: .5s ease;
+  }
+  
+  .login-light {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 10px;
+    background: #2deee4c4;
+    border-radius: 20px;
+  }
+  
+  button:hover {
+    background-color: #e3d5e9;
+    
+  }
+  a{
+    margin: 150px;
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+  }
+
+  
+  @media screen and (max-width: 600px) {
+    .form-container {
+        width: 90%;
+    }
+  }
+  
+    </style>
+  </head>
+<body>
+    <div class="login-light">
+      <div class="form-container">
+        <h2>Welcome to Admin</h2>
+        <form action="view-user" id="signup-form" class="form" method="get">
+          <h3></h3>
+          <button type="submit">View User</button>
+        </form>
+        <form action="add-movie" id="login-form" class="form" method="get"> 
+          <h3></h3>
+          <button type="submit">Add Movies</button>
+        </form>
+        <form action="view-movie" id="login-form" class="form" method="get">
+            <h3></h3>
+            <button type="submit">View Movies</button>
+        </form>
+        
+        <!--
+        <form action="delete-user" id="login-form" class="form" method="get">
+          <h3></h3>
+          <button type="submit">Delete User</button>
+      </form>
+      
+      </div>
+    </div>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home</title>
+    <style>
+      /* styles.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    /* font-family: Arial, sans-serif; */
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .form-container {
+    /* border: 2px solid black; */
+    max-width: 365px;
+    margin: 50px auto;
+    padding: 40px 40px 40px 40px;
+    background-color: #161616;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgb(83, 83, 83);
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #36b6dd;
+  }
+  
+  h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #f5f5f5;
+  }
+  
+  button {
+      width: 100%;
+      height: 40px;
+      background: #fff;
+      border: none;
+      outline: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1em;
+      color: #191919;
+      font-weight: 500;
+      transition: .5s ease;
+  }
+  
+  .login-light {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+    height: 10px;
+    background: #2deee4c4;
+    border-radius: 20px;
+  }
+  
+  button:hover {
+    background-color: #e3d5e9;
+    
+  }
+  
+  @media screen and (max-width: 600px) {
+    .form-container {
+        width: 90%;
+    }
+  }
+  
+    </style>
+  </head>
+<body>
+    <div class="login-light">
+      <div class="form-container">
+        <h2>Welcome to Admin</h2>
+        <form action="view-user" id="signup-form" class="form" method="get">
+          <h3></h3>
+          <button type="submit">View User</button>
+        </form>
+        <form action="add-movie" id="login-form" class="form" method="get"> 
+          <h3></h3>
+          <button type="submit">Add Movies</button>
+        </form>
+        <form action="view-movie" id="login-form" class="form" method="get">
+            <h3></h3>
+            <button type="submit">View Movies</button>
+          </form>
+        <form action="delete-user" id="login-form" class="form" method="get">
+          	<h3></h3>
+          	<button type="submit">Delete User</button>
+      	</form>
+      </div>
+    </div>
+</body>
+</html>
+ -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+	<h3>Welcome to administration home page</h3>
+	
+	<a href="view-user">
+		<button type="submit">View User</button>
+	</a>
+	<br><br>
+	
+	<a href="add-movie">
+		<button type="submit">Add movie</button>
+	</a>
+	<br><br>
+	
+	<a href="view-movie">
+		<button type="submit">View movies</button>
+	</a>
+	
+</body>
+</html>
+ -->

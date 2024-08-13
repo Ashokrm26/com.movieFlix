@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Updating Profile</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    color: #fff;
+}
+h2{
+    text-align: center;
+}
+h3{
+    color: whitesmoke;
+}
+header {
+    background-color: rgb(253, 0, 0);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.present{
+    border: 0px solid;
+    justify-content: baseline;
+    width: 25%;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 1%;
+    margin-left: 0.5%;
+    background-color: rgba(35, 53, 56, 0.692);
+}
+.update{
+    padding-top: 1%;
+    padding-left: 3%;
+    padding-bottom: 6.8%;
+    border: 0px solid;
+    width: 65%;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: -45%;
+    margin-left: 380px;
+    justify-content: space-between;
+    background-color: rgba(35, 53, 56, 0.692);
+}
+a{
+    text-decoration: none;
+    color: #ff0404;
+}
+button:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+</style>
+</head>
+<body>
+	<!-- <header>
+        <h1>MovieFlix</h1>
+        <nav>
+            <ul>
+                <li><a href="user-home">Home</a></li>
+                <li><a href="exploremovies">Premium Movies</a></li>
+                <li><a href="update-user">Update Profile</a></li>
+                <li><a href="logout">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+     -->
+    
+	<div class="present">
+            <table border="1"></table>
+		    <tr>
+                <h3>Current Profile Details</h3>
+                <hr>
+                <br>
+                <b><td>Name<br></td></b><br>
+                <tr th:each="user : ${user}">
+                    <td th:text="${user.name}"><br></td>
+                </tr>
+                <br><br>
+                <hr>
+                <br>
+                <b>Email <br></b><br>
+                <tr>
+                    <td th:text="${user.email}"><br></td>
+                </tr>
+                <br><br>
+                <hr>
+                <br>
+                <b>Gender <br></b><br>
+                    <td th:text="${user.gender}"><br></td>
+                    <br><br>
+                    <hr>
+                <br>
+                <b>Phone <br></b><br>
+                    <td th:text="${user.phone}"><br></td>
+                    <br>
+                    <hr>
+                <br>
+                <b>Address <br></b><br>
+                    <td th:text="${user.address}"><br></td>
+                <br><br><br>
+		    </tr>
+	    </table>
+    </div>
+	<div class="update">
+        <h3>Updating...</h3>
+        <br><br>
+	    <form action="updatinguserdetail" method="post">
+
+            <input type="text" name="name" required th:value="${user.name}" placeholder="Enter the name" style="width: 30%; min-height: 30px; border-radius: 8px; text-align: center;">
+
+            <input type="email" name="email" th:value="${user.email}" readonly="readonly" required style="width: 30%; min-height: 30px; border-radius: 8px; text-align: center;">
+            <br><br><br>
+
+            
+            <b>Male</b><input type="radio" name="gender" value="MAlE" required>
+            <b>Female</b><input type="radio" name="gender" value="FEMAlE" required>
+            <b>Other</b><input type="radio" name="gender" value="OTHER" required>
+            <br><br><br>
+            
+            <input type="number" name="phone" required th:value="${user.phone}" placeholder="Enter the Phone" style="width: 30%; min-height: 30px; border-radius: 8px; text-align: center;">
+            <br><br><br>
+            
+            <textarea rows="3" cols="25" name="address" required th:value="${user.address}" placeholder="Enter the Address" style="width: 30%; min-height: 30px; border-radius: 5px; text-align: center;"></textarea>
+            <br><br><br>
+            
+            <button type="submit" style="width: 50%; min-height: 50px; border-radius: 25px;">Update Profile</button>
+            <br><br><br>
+            <div>
+                <a href="userlist"><b>Back to users</b></a>
+            </div>
+	    </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Updating Profile</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    color: #fff;
+}
+h2{
+    text-align: center;
+}
+h3{
+    color: whitesmoke;
+}
+header {
+    background-color: rgb(253, 0, 0);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.present{
+    border: 0px solid;
+    justify-content: baseline;
+    width: 25%;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 1%;
+    margin-left: 0.5%;
+    background-color: rgba(35, 53, 56, 0.692);
+}
+.update{
+    padding-top: 1%;
+    padding-left: 3%;
+    padding-bottom: 6.8%;
+    border: 0px solid;
+    width: 65%;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: -45%;
+    margin-left: 380px;
+    justify-content: space-between;
+    background-color: rgba(35, 53, 56, 0.692);
+}
+a{
+    text-decoration: none;
+    color: #ff0404;
+}
+button:hover{
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+</style>
+</head>
+<body>
+	<header>
+        <h1>MovieFlix</h1>
+        <nav>
+            <ul>
+                <li><a href="user-home">Home</a></li>
+                <li><a href="exploremovies">Premium Movies</a></li>
+                <li><a href="update-user">Update Profile</a></li>
+                <li><a href="logout">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+	<div class="present">
+            <table border="1"></table>
+		    <tr>
+                <h3>Current Profile Details</h3>
+                <hr>
+                <br>
+                <b><td>Name<br></td></b><br>
+                <tr th:each="users : ${users}">
+                    <td th:text="${users.name}"><br></td>
+                </tr>
+                <br><br>
+                <hr>
+                <br>
+                <b>Email <br></b><br>
+                <tr>
+                    <td th:text="${users.email}"><br></td>
+                </tr>
+                <br><br>
+                <hr>
+                <br>
+                <b>Gender <br></b><br>
+                    <td th:text="${users.gender}"><br></td>
+                    <br><br>
+                    <hr>
+                <br>
+                <b>Phone <br></b><br>
+                    <td th:text="${users.phone}"><br></td>
+                    <br>
+                    <hr>
+                <br>
+                <b>Address <br></b><br>
+                    <td th:text="${users.address}"><br></td>
+                <br><br><br>
+		    </tr>
+	    </table>
+    </div>
+	<div class="update">
+        <h3>Updating...</h3>
+        <br><br>
+	    <form action="update-profile" method="post">
+
+            <input type="text" name="name" required th:value="${users.name}" placeholder="Enter the name" style="width: 30%; min-height: 30px; border-radius: 8px; text-align: center;">
+
+            <input type="email" name="email" th:value="${users.email}" readonly="readonly" required style="width: 30%; min-height: 30px; border-radius: 8px; text-align: center;">
+            <br><br><br>
+
+            
+            <b>Male</b><input type="radio" name="gender" value="MAlE" required>
+            <b>Female</b><input type="radio" name="gender" value="FEMAlE" required>
+            <b>Other</b><input type="radio" name="gender" value="OTHER" required>
+            <br><br><br>
+            
+            <input type="number" name="phone" required th:value="${users.phone}" placeholder="Enter the Phone" style="width: 30%; min-height: 30px; border-radius: 8px; text-align: center;">
+            <br><br><br>
+            
+            <textarea rows="3" cols="25" name="address" required th:value="${users.address}" placeholder="Enter the Address" style="width: 30%; min-height: 30px; border-radius: 5px; text-align: center;"></textarea>
+            <br><br><br>
+            
+            <button type="submit" style="width: 50%; min-height: 50px; border-radius: 25px;">Update Profile</button>
+            <br><br><br>
+            <div>
+                <a href="user-home"><b>Home Page</b></a>
+            </div>
+	    </form>
+
+    </div>
+</body>
+</html>
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Updating Profile</title>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    color: #fff;
+}
+h2{
+    text-align: center;
+}
+header {
+    background-color: rgb(253, 0, 0);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.present{
+    border: 0px solid;
+    /* display: flex; */
+    justify-content: baseline;
+    width: 25%;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: 1%;
+    margin-left: 0.5%;
+    background-color: rgba(35, 53, 56, 0.692);
+}
+.update{
+    padding-top: 1%;
+    padding-left: 3%;
+    padding-bottom: 11%;
+    border: 0px solid;
+    width: 65%;
+    text-align: center;
+    border-radius: 20px;
+    margin-top: -45%;
+    margin-left: 380px;
+    justify-content: space-between;
+    background-color: rgba(35, 53, 56, 0.692);
+}
+a{
+    text-decoration: none;
+    color: #ff0404;
+}
+</style>
+</head>
+<body>
+	<header>
+        <h1>MovieFlix</h1>
+        <nav>
+            <ul>
+                <li><a href="user-home">Home</a></li>
+                <li><a href="exploremovies">Premium Movies</a></li>
+                <li><a href="update-user">Update Profile</a></li>
+                <li><a href="logout">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+	<div class="present">
+            <table border="1"></table>
+		    <tr>
+                <h3>Current Profile Details</h3>
+                <hr>
+                <br>
+                <b><td>Name<br></td></b><br>
+                <tr th:each="users : ${users}">
+                    <td th:text="${users.name}"><br></td>
+                </tr>
+                <br><br>
+                <hr>
+                <br>
+                <b>Email <br></b><br>
+                <tr>
+                    <td th:text="${users.email}"><br></td>
+                </tr>
+                <br><br>
+                <hr>
+                <br>
+                <b>Gender <br></b><br>
+                    <td th:text="${users.gender}"><br></td>
+                    <br><br>
+                    <hr>
+                <br>
+                <b>Phone </b><br><br>
+                    <td th:text="${users.phone}"><br></td>
+                    <br>
+                    <hr>
+                <br>
+                <b>Address </b><br><br>
+                    <td th:text="${users.address}"><br></td>
+                <br><br><br>
+		    </tr>
+		    <!-- <tr th:each="users : ${users}">
+                <td th:text="${users.name}">Ashok</td>
+                <td th:text="${users.email}">rashokise2023@gmail.com</td>
+                <td th:text="${users.gender}">Male</td>
+                <td th:text="${users.phone}">7411199281</td>
+                <td th:text="${users.address}">Chennai</td>
+		    </tr> 
+	    </table>
+    </div>
+	<div class="update">
+        <h3>Updating...</h3>
+        <br><br>
+	    <form action="update-profile" method="post">
+
+            <input type="text" name="name" required th:value="${users.name}" placeholder="Enter the name">
+
+            <input type="email" name="email" th:value="${users.email}" readonly="readonly" required>
+            <br><br><br>
+
+            <!-- 
+            <label>Password </label>
+            <input type="password" name="password" required>
+            <br><br>
+            
+            
+            <b>Male</b><input type="radio" name="gender" value="MAlE" required>
+            <b>Female</b><input type="radio" name="gender" value="FEMAlE" required>
+            <b>Other</b><input type="radio" name="gender" value="OTHER" required>
+            <br><br><br>
+            
+            <input type="number" name="phone" required th:value="${users.phone}" placeholder="Enter the Phone">
+            <br><br><br>
+            
+            <textarea rows="3" cols="25" name="address" required th:value="${users.address}" placeholder="Enter the Address"></textarea>
+            <br><br><br>
+            
+            <button type="submit">Update Profile</button>
+            <br><br><br>
+            <div>
+                <a href="user-home"><b>Home Page</b></a>
+            </div>
+	    </form>
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Updating Profile</title>
+<style>
+    body{
+        /*background-image: url('abcdjpg.jpg');*/
+        background-image: url(/images/abcdjpg.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        display: flex;
+        /* background-color: rgba(0, 0, 0, 0.699); */
+        font-family:'Courier New', Courier, monospace;
+    }
+    .present{
+        background-color: rgba(245, 242, 244, 0.699);
+        width: 40%;
+        border: 1px solid;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin-right: 1%;
+        border-radius: 20px;
+    }
+    .update{
+        width: 100%;
+        padding: 4%;
+        border: 1px solid;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        /* margin-right: 5%; */
+        margin: 10%;
+        border-radius: 20px;
+        background-color: rgba(253, 244, 251, 0.699);
+    }
+    input{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    textarea{
+        text-align: center;
+        border-radius: 10px;
+    }
+    button{
+        width: 40%;
+    }
+    button:hover{
+        background-color: black;
+        color: white;
+        width: 41%;
+    }
+    a{
+        text-decoration: none;
+        color: red;
+    }
+    h3{
+        color: rgb(255, 0, 128);
+        background-color: rgb(250, 248, 248, 0.7);
+    }
+</style>
+</head>
+<body>
+
+	<header>
+        <h1>MovieFlix</h1>
+        <nav>
+            <ul>
+                <li><a href="user-home">Home</a></li>
+                <li><a href="exploremovies">Premium Movies</a></li>
+                <li><a href="update-user">Update Profile</a></li>
+                <li><a href="logout">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+	<div class="present">
+        <br>
+        <h3>MOVIE FLIX</h3>
+        <br><hr><br>
+	    <!-- <table border="1"> 
+            <table border="1"></table>
+		    <tr>
+                <b><td>Name <br></td></b>
+                <tr th:each="users : ${users}">
+                    <td th:text="${users.name}"><br></td>
+                </tr>
+                <br><br>
+                <hr>
+                <br><br>
+                <b>Email <br></b>
+                <tr>
+                    <td th:text="${users.email}"><br></td>
+                </tr>
+                <br><br>
+                <hr>
+                <br><br>
+                <b>Gender <br></b>
+                    <td th:text="${users.gender}"><br></td>
+                    <br><br>
+                    <hr>
+                <br><br>
+                <b>Phone <br></b>
+                    <td th:text="${users.phone}"><br></td>
+                    <br><br>
+                    <hr>
+                <br><br>
+                <b>Address <br></b>
+                    <td th:text="${users.address}"><br></td>
+                <br><br><br>
+		    </tr>
+		    <!-- <tr th:each="users : ${users}">
+                <td th:text="${users.name}">Ashok</td>
+                <td th:text="${users.email}">rashokise2023@gmail.com</td>
+                <td th:text="${users.gender}">Male</td>
+                <td th:text="${users.phone}">7411199281</td>
+                <td th:text="${users.address}">Chennai</td>
+		    </tr> 
+	    </table>
+    </div>
+	<div class="update">
+        <h3>Updating...</h3>
+	    <form action="update-profile" method="post">
+
+            <input type="text" name="name" required th:value="${users.name}" placeholder="Enter the name">
+
+            <input type="email" name="email" th:value="${users.email}" readonly="readonly" required>
+            <br><br>
+
+            <!-- 
+            <label>Password </label>
+            <input type="password" name="password" required>
+            <br><br>
+            
+            <b>Male</b><input type="radio" name="gender" value="MAlE" required>
+            <b>Female</b><input type="radio" name="gender" value="FEMAlE" required>
+            <b>Other</b><input type="radio" name="gender" value="OTHER" required>
+            <br><br>
+            
+            <input type="number" name="phone" required th:value="${users.phone}" placeholder="Enter the Phone">
+            <br><br>
+            
+            <textarea rows="3" cols="25" name="address" required th:value="${users.address}" placeholder="Enter the Address"></textarea>
+            <br><br>
+            
+            <button type="submit">Update Profile</button>
+            <br><br>
+            <div>
+                <a href="user-home"><b>Home Page</b></a>
+            </div>
+	    </form>
+
+    </div>
+</body>
+</html>
+ -->
+
+
+
+
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Updating Profile</title>
+</head>
+<body>
+
+	<h3>Present profile</h3>
+	<table border="1">
+		<tr>
+			<td>Name</td>
+			<td>Email</td>
+			<td>Gender</td>
+			<td>Phone</td>
+			<td>Address</td>
+		</tr>
+		<tr th:each="users : ${users}">
+			<td th:text="${users.name}"></td>
+			<td th:text="${users.email}"></td>
+			<td th:text="${users.gender}"></td>
+			<td th:text="${users.phone}"></td>
+			<td th:text="${users.address}"></td>
+		</tr>
+	</table>
+	<br><br>
+	
+	<h3>Need to update</h3>
+	<form action="update-profile" method="post">
+	<label>Name </label>
+		<input type="text" name="name" required>
+		<br><br>
+		
+		<h3>Don't change the email : </h3>
+		<br>
+		<label>Email </label>
+		<input type="email" name="email" th:value="${users.email}" readonly="readonly" required>
+		<br><br>
+		
+		
+		/*<label>Password </label>*/
+		/*<input type="password" name="password" required>*/
+		/*<br><br>*/
+		 
+		 
+		
+		<label>Gender </label>
+		Male<input type="radio" name="gender" value="MAlE" required>
+		Female<input type="radio" name="gender" value="FEMAlE" required>
+		Other<input type="radio" name="gender" value="OTHER" required>
+		<br><br>
+		
+		<label>Number </label>
+		<input type="number" name="phone" required>
+		<br><br>
+		
+		<label>Address </label>
+		<textarea rows="3" cols="25" name="address" required></textarea>
+		<br><br>
+		
+		<button type="submit">Register</button>
+	</form>
+</body>
+</html>
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Updating Profile</title>
+</head>
+<body>
+	<form action="update-profile">
+	<label>Name </label>
+		<input type="text" name="name" required>
+		<br><br>
+		
+		<label>Email </label>
+		<input type="email" name="email" required>
+		<br><br>
+		
+		<label>Password </label>
+		<input type="password" name="password" required>
+		<br><br>
+		
+		<label>Gender > </label>
+		Male<input type="radio" name="gender" value="MAlE" required>
+		Female<input type="radio" name="gender" value="FEMAlE" required>
+		Other<input type="radio" name="gender" value="OTHER" required>
+		<br><br>
+		
+		<label>Number </label>
+		<input type="number" name="phone" required>
+		<br><br>
+		
+		<label>Address </label>
+		<textarea rows="3" cols="25" name="address" required></textarea>
+		<br><br>
+		
+		<button type="submit">Register</button>
+	</form>
+</body>
+</html>
+
+ -->

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Added Success</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #141414;
+        color: #fff;
+        background-image: url('/images/abcdjpg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        justify-content: center;
+    }
+    form{
+        border: 0px solid black;
+        border-radius: 5%;
+        width: 27%;
+        padding: 3%;
+        text-align: center;
+        margin-left: 34%;
+        margin-top: 3%;
+        /* margin-block: 5%; */
+        background-color: rgba(240, 248, 255,0.5);
+    }
+    input{
+        border-radius: 10px;
+        width: 70%;
+        margin-bottom: 10px;
+        font-family: monospace;
+        text-align: center;
+        min-height: 40px;
+        color: rgb(0, 0, 0);
+    }
+    ::placeholder{
+        color: black;
+    }
+    select{
+        border-radius: 10px;
+        width: 72%;
+        margin-bottom: 10px;
+        font-family: monospace;
+        text-align: center;
+        min-height: 40px;
+    }
+    button{
+        margin-top: 10%;
+        width: 40%;
+        min-height: 35px;
+        border-radius: 10px;
+        border-color: rgb(194, 16, 141);
+        background-color: rgb(192, 17, 140);
+    }
+    button:hover{
+        background-color: rgb(194, 16, 141);
+        color: white;
+    }
+    h4{
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+    }
+    header {
+        background-color: rgb(253, 0, 0);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    header h1 {
+        margin: 0;
+    }
+    
+    nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <header>
+		<h1>MovieFlix</h1>
+		  <nav>
+			<ul>
+				<li><a href="back">Home</a></li>
+				<li><a href="view-user">View User</a></li>
+				<li><a href="add-movie">Add Movies</a></li>
+				<li><a href="logout">Log out</a></li>
+			</ul>
+		  </nav>
+	</header>
+    <form action="addmovie" method="post" class="addmovie">
+        <h4 class="head-text">Movie added successfully</h4>
+        <div class="input-container">
+            <input type="text" name="movieName" placeholder="Movie Name" required >
+
+        </div>
+		<div class="input-container">
+            <input type="text" name="movieLink" placeholder="Movie Link" required>
+        </div>
+		<div class="input-container">
+            <select name="movieGenre" required>
+                <option value="" disabled selected>Select Genre</option>
+				<option value="Science-Fiction">Science - Fiction</option>
+				<option value="Horror">Horror</option>
+                <option value="Thriller">Thriller</option>
+                <option value="History">History</option>
+                <option value="Biography">Biography</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Mystery">Mystery</option>
+				<option value="Romance">Romance</option>
+				<option value="Action">Action</option>
+				<option value="Comedy">Comedy</option>
+                <option value="Documentary">Documentary</option>
+                <option value="Adult">Adult</option>
+                <option value="Education">Education</option>
+			</select>
+        </div>
+		<div class="input-container">
+		    <input type="text" name="movieCast" placeholder="Movie Cast" required>
+        </div>
+		<div class="input-container">
+		    <input type="text" name="movieDirector" placeholder="Movie Director" required>
+        </div>
+		<div>
+            <button type="submit">Add Movie</button>
+        </div>
+        <br>
+	</form>
+</body>
+</html>
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding Movies</title>
+    <style>
+        body{
+            background-color: #1A1423;
+            /* font-size:larger; */
+            font-family: monospace;
+            color: #fffffff3;
+            padding: 0;
+            border: 0;
+            font-family: cursive;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+            height: 100vb;
+            background-image:inherit;
+            
+        }
+        .head-text{
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+        form{
+            border: 2px solid black;
+            background-color: #372549;
+            width: 400px;
+            height: 590px;
+            padding: 50px;
+            padding-top: 20px;
+            padding-bottom: 70px;
+            border-radius: 20px;
+        }
+        input{
+            border-radius: 10px;
+            width: 440px;
+            height: 44px;
+            text-align: center;
+            word-spacing: 2px;
+            margin: 23px;
+        }
+        .input-container {
+            display: flex;
+        }
+        button{
+            width: 400px;
+            height: 60px;
+            border-radius: 30px;
+
+        }
+        button:hover{
+            color: rgb(255, 255, 255);
+            background-color: rgb(80, 92, 88);
+        }
+        select{
+            width: 440px;
+            height: 44px;
+            text-align: center;
+            border-radius: 10px;
+            padding-left: 40px;
+            word-spacing: 2PX;
+            margin: 23px;
+        }
+        ::placeholder{
+            color: black;
+        }
+        a{
+            margin: 150px;
+            color: rgb(253, 253, 253);
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+    <form action="addmovie" method="post">
+        <h4 class="head-text">Movie added successfully</h4>
+        <div class="input-container">
+            <input type="text" name="movieName" placeholder="Movie Name" required >
+
+        </div>
+		<div class="input-container">
+            <input type="text" name="movieLink" placeholder="Movie Link" required>
+        </div>
+		<div class="input-container">
+            <select name="movieGenre" required>
+				<option value="Science-Fiction">Science - Fiction</option>
+				<option value="Horror">Horror</option>
+				<option value="Romance">Romance</option>
+				<option value="Action">Action</option>
+				<option value="Comedy">Comedy</option>
+                <option value="Documentary">Documentary</option>
+			</select>
+        </div>
+		<div class="input-container">
+		    <input type="text" name="movieCast" placeholder="Movie Cast" required>
+        </div>
+		<div class="input-container">
+		    <input type="text" name="movieDirector" placeholder="Movie Director" required>
+        </div>
+		<div>
+            <button type="submit">Add Movie</button>
+        </div>
+        <br>
+        <div class="back">
+            <a href="back">Admin Page !</a>
+        </div>
+	</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+ 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Movie added successfully</h3>
+	<br>
+	<form action="addmovie" method="post">
+		<label>Movie Name</label>
+		<input type="text" name="movieName"><br><br>
+		
+		<label>Movie Link</label>
+		<input type="text" name="movieLink"><br><br>
+		
+		<label>Movie Genre</label>
+			<select name="movieGenre">
+				<option value="Sci-Fi">Sci-Fi</option>
+				<option value="Horror">Horror</option>
+				<option value="Romance">Romance</option>
+				<option value="Action">Action</option>
+				<option value="Comedy">Comedy</option>
+			</select>
+		<br><br>
+		
+		<label>Movie Cast</label>
+		<input type="text" name="movieCast">
+		<br><br>
+		
+		<label>Movie Director</label>
+		<input type="text" name="movieDirector">
+		<br><br>
+		
+		<button type="submit">Add Movie</button>
+	</form>
+</body>
+</html>
+ -->

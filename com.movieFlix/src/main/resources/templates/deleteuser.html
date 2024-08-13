@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Deleting User</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: monospace;
+
+    }
+    body{
+        border: 1px solid white;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #000;
+        overflow: hidden;
+    }
+    h3{
+        color: rgb(255, 255, 255);
+        text-align: center;
+    }
+    button{
+        background-color: rgb(43, 214, 226);
+        color: #fff;
+        width: 250px;
+        height: 40px;
+        border-radius: 20px;
+    }
+    input{
+        padding: 5px;
+        border-radius: 6px;
+        width: 250px;
+        text-align: center;
+
+    }
+    button:hover{
+        background-color: rgb(145, 31, 173);
+        color: #fff;
+        border: 1px solid black;
+    }
+    a{
+        margin:85px;
+        text-decoration: none;
+        color: crimson;
+    }
+</style>
+<body>
+	<div>
+        <div>
+            <h3>Deleting User Profile</h3>
+            <br>
+        </div>
+        <form action="deleteregister" method="post">
+            <input type="text" placeholder="Enter ID To Delete">
+            <br><br><br>
+		    <button type="submit">Delete User</button>
+            <br><br>
+        </form>
+        <div class="back">
+            <a href="back">Admin Page !</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Streaming App</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #141414;
+    color: #fff;
+}
+h2{
+    text-align: center;
+}
+header {
+    /* background-color: #000; */
+    background-color: rgb(253, 0, 0);
+
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.featured {
+    padding: 20px;
+    display: flex;
+    /* margin-inline-end: 1%; */
+    /* margin-inline: 3%; */
+    /* margin-block: 3%; */
+}
+
+.featured .movie {
+    display: flex;
+    align-items: center;
+}
+
+.featured .movie img {
+    width: 200px;
+    margin-right: 20px;
+}
+
+.featured .movie-info {
+    max-width: 600px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.featured .movie-info h3 {
+    margin: 0;
+}
+
+.movie-list {
+    padding: 20px;
+}
+
+.movie-list .movies {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie-list .movie {
+    margin: 10px;
+    text-align: center;
+}
+
+.movie-list .movie img {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+}
+button:hover{
+    color: white;
+    background-color: black;
+}
+</style>
+</head>
+<body>
+    <header>
+        <h1>MovieFlix</h1>
+        <nav>
+            <ul>
+                <li><a href="user-home">Home</a></li>
+                <li><a href="exploremovies">Premium Movies</a></li>
+                <!-- <li><a href="#">TV Shows</a></li> -->
+                <li><a href="update-user">Update Profile</a></li>
+                <li><a href="logout">Log out</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>Today's top Movies</h2>
+    <main>
+        <section class="featured">
+            <div class="movie">
+                <img src="/images/killbill.jpg" alt="Featured Movie">
+                <div class="movie-info">
+                    <h3><u>Movie Title</u></h3>
+                    <p><b><i>Kill Bill : Volume 1</i></b> is a 2003 American martial arts film written and directed by Quentin Tarantino. It stars Uma Thurman as the Bride, who swears revenge on a group of assassins (Lucy Liu, Michael Madsen, Daryl Hannah, and Vivica A. Fox) and their leader, Bill (David Carradine), after they try to kill her and her unborn child.</p>
+                    <br><br>
+                    <!-- <button style="height: 40px; margin-top: 10%;">Watch Now</button>  -->
+                </div>
+            </div>
+            <div class="movie">
+                <img src="/images/djangounchained.jpeg" height="300px" alt="Featured Movie">
+                <div class="movie-info">
+                    <h3><u>Movie Title</u></h3>
+                    <p><b><i>Django Unchained : </i></b>Django Unchained is a 2012 American revisionist Western film written and directed by Quentin Tarantino, starring Jamie Foxx, Christoph Waltz, Leonardo DiCaprio, Kerry Washington, and Samuel L. Jackson, with Walton Goggins, Dennis Christopher, James Remar, Michael Parks, and Don Johnson in supporting roles.</p>
+                    <br><br>
+                    <!-- <button style="height: 40px; margin-top: 10%;">Watch Now</button>  -->
+                </div>
+            </div>
+        </section>
+        <section class="movie-list">
+            <h2>Popular Movies</h2>
+            <div class="movies">
+                <div class="movie">
+                    <img src="/images/equalizer1.jpg" alt="Movie 1">
+                    <h3>Equalizer 1</h3>
+                </div>
+                <div class="movie">
+                    <img src="/images/equalizer2.jpg" alt="Movie 2">
+                    <h3>Equalizer  2</h3>
+                </div>
+                <div class="movie">
+                    <img src="/images/avatarthewayofwater.jpeg" alt="Movie 3">
+                    <h3>Avatar 2</h3>
+                </div>
+                <div class="movie">
+                    <img src="/images/pulpfiction.jpeg" alt="Movie 4">
+                    <h3>Pulp Fiction</h3>
+                </div>
+                <div class="movie">
+                    <img src="/images/reservoirdogs.jpeg" alt="Movie 5">
+                    <h3>Reservoir Dogs</h3>
+                </div>
+                <div class="movie">
+                    <img src="/images/geminiman.jpeg" alt="Movie 6">
+                    <h3>Gemini Man </h3>
+                </div>
+                <div class="movie">
+                    <img src="/images/jackiebrown.jpg" alt="Movie 7">
+                    <h3>Jackie Brown</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
+
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	body{
+		background-color:rgb(158, 132, 132);
+		color: rgb(255, 255, 255);
+	}
+
+	.one{
+        border: 1px solid black;
+         width: 100%;
+		 height: 80px;
+		 padding-top: 0px;
+		 background-color: rgb(82, 75, 75);
+         border-radius: 30px;
+         text-align: center;
+         
+
+	}
+	.two{
+		/* border: 2px solid red; */
+		/* height: 250px; */
+        height: 250px;
+		width: 66%;
+		margin-top: -40%;
+		margin-left: 32%;
+		text-align: center;
+		/* padding: 20px; */
+		/* background-color: rgb(255, 255, 255); */
+        color: black;
+	}
+	.three{
+		/* border: 2px solid red; */
+		height:500px ;
+		width:15% ;
+		text-align:center ;
+        /* box-sizing: border-box; */
+		padding-top:-2px ;
+		margin-top:100px ;
+		/* background-color: rgb(255, 255, 255); */
+        border-radius: 20px;
+	}
+    button{
+        border-radius: 20px;
+        width: 150px;
+        height: 40px;
+        background-color: rgb(255, 255, 255);
+    }
+    button :hover{
+        background-color: burlywood;
+    }
+
+</style>
+</head>
+<body>
+	<div>
+        <hr>
+		<header class="one">
+		<h1>Welcome to MovieFlix</h2>
+        </header>	
+	</div>
+    <hr>
+
+<article class="three">
+	<div>
+        <!-- 
+        <form action="exploremovies" method="post">
+            <button type="submit">Explore Movies</button>
+            <br><br>
+        </form>
+        
+        <a href="exploremovies">
+			<button type="submit">Explore Movies</button>
+		</a>
+		<br><br>
+		
+		<!--
+		<form action="update-user" method="get">
+            <button type="submit">Update Profile</button>
+            <br><br>
+        </form>
+        
+        <a href="update-user">
+	  	<button type="submit">Update Profile</button>
+	  	</a>
+	  	<br><br>
+  
+        <!-- 
+        <form action="logout" method="get">
+            <button type="submit">Logout</button>
+            <br><br>
+        </form>
+        
+        <a href="logout">
+	  		<button type="submit">Logout</button>
+	  	</a>
+	</div>
+</article>
+	<div>
+		<div>	<aside class="two">
+			<p>MovieFlix is a online-based streaming service that allows members to watch TV shows and movies on an internet-connected device. <br> <br>
+			Depending on your plan, you can also download content to your iOS, Android, or Windows 10 device and watch without an internet <br> <br>connection1.
+			It offers a wide variety of award-winning MovieFlix originals, TV shows, movies, documentaries, and more.The more <br> <br>you watch,
+			the better MovieFlix gets at recommending content. You can access MovieFlix on smart TVs, game consoles, streaming<br> <br> media players, 
+			set-top boxes, smart-phones, tablets, and even through a web browser on your computer. Plans vary in terms of the<br> <br>number of devices
+				you can use simultaneously and the video quality (HD, FHD, or UHD)1</p></aside>
+		</div>
+	</div>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	body{
+		background-color:rgb(55, 61, 61);
+		color: rgb(255, 255, 255);
+	}
+	/*
+	.nav{
+		 border: 1px solid black;
+		width: 100px;
+		height: 400px;
+		padding: 30px;
+		text-align: center;
+		border-radius: 20px;
+		background-color:#003566;
+	}
+	*/
+	p{
+		padding: 20px;
+		text-align: center;
+		background-color: #3b3b3b;
+		color: #ffffff;
+		align-items: center;
+		margin: 10px;
+	}
+	h1{
+		/* border: 1px solid black; */
+		background-color: rgb(59, 59, 59);
+		border-radius: 10px;
+		height: 100px;
+		padding-top: 10px;
+		text-align: center;
+		color: #ffffff;
+		margin: 10px;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<h1>Welcome to MovieFlix</h2>
+	</div>
+	
+	<div>
+		<div>
+			<p>MovieFlix is a online-based streaming service that allows members to watch TV shows and movies on an internet-connected device.
+			Depending on your plan, you can also download content to your iOS, Android, or Windows 10 device and watch without an internet connection1.
+			It offers a wide variety of award-winning MovieFlix originals, TV shows, movies, documentaries, and more. The more you watch,
+			the better MovieFlix gets at recommending content. You can access MovieFlix on smart TVs, game consoles, streaming media players, 
+			set-top boxes, smart-phones, tablets, and even through a web browser on your computer. Plans vary in terms of the number of devices
+				you can use simultaneously and the video quality (HD, FHD, or UHD)1</p>
+		</div>
+	</div>
+	<div>
+		<a href="exploremovies">
+			<button type="submit">Explore Movies</button>
+		</a>
+		<br><br>
+		
+		<a href="update-user">
+			<button type="submit">Update Profile</button>
+		</a>
+		<br><br>
+  
+		<a href="logout">
+			<button type="submit">Logout</button>
+		</a>
+	</div>
+</body>
+</html> -->
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Welcome to MovieFlix</h3>
+	<br>
+	<p>MovieFlix is a online-based streaming service that allows members to watch TV shows and movies on an internet-connected device.
+	 Depending on your plan, you can also download content to your iOS, Android, or Windows 10 device and watch without an internet connection1.
+	 It offers a wide variety of award-winning MovieFlix originals, TV shows, movies, documentaries, and more. The more you watch,
+	 the better MovieFlix gets at recommending content. You can access MovieFlix on smart TVs, game consoles, streaming media players, 
+	 set-top boxes, smart-phones, tablets, and even through a web browser on your computer. Plans vary in terms of the number of devices
+	  you can use simultaneously and the video quality (HD, FHD, or UHD)1</p>
+	  
+	  <br><br>
+	  <a href="exploremovies">
+	  	<button type="submit">Explore Movies</button>
+	  </a>
+	  <br><br>
+	  
+	  <a href="update-user">
+	  	<button type="submit">Update Profile</button>
+	  </a>
+	  <br><br>
+
+	  <a href="logout">
+	  	<button type="submit">Logout</button>
+	  </a>
+</body>
+</html>
+-->
